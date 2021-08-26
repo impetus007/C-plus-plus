@@ -68,3 +68,74 @@
 // }
 
 //********* while loop *********
+
+// write s program to print a no till n 
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n,i=1;
+//     cout<<"Enter a no :";
+//     cin>>n;
+//     while(n>0){
+//         cout<<i<<endl;
+//         i++;
+//         n--;
+//     }
+//     return 0;
+// }
+
+
+//********** do while *********
+
+// #include <iostream>
+// using namespace std;
+//  int main()
+// {
+// int i = 1;
+//  do {
+//     cout << i << endl;
+//     i++;
+//     }while (i <= 5);
+//     return 0;
+// }
+
+
+//program on continue and break 
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int pocketmoney=3000;
+//     for( int date =1 ; date<=30;date++){
+//         if(date%2==0){
+//             continue;
+//         }
+//         if(pocketmoney==0){
+//             break;
+//         }
+//         cout<<"Go out today!"<<endl;
+//         pocketmoney=pocketmoney-300;
+//     }
+//     return 0;
+// }
+
+
+//write a program to checkout prime no 
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n , i;
+//     cout<<"Enter a no :";
+//     cin>>n;
+//     for( i=2;i<n;i++){
+//         if(n%i==0){
+//             cout<<"aww aww sorry no is not prime";
+//             break;
+//         }
+//     }
+//     if(i==n){
+//         cout<<"wow! no is prime";
+//     }
+//     return 0;
+// }
