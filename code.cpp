@@ -359,9 +359,166 @@
 //     return 0;
 // }
 
+//  square pattern 
+//write a program for below output
+//  * * * *
+//  * * * *
+//  * * * *
+//  * * * *
 
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter a side of square :";
+//     cin>>n;
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=n;j++){
+//             cout<<" * ";
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
 
+// Rectangle pattern
+// * * * * * *.......
+// * * * * * *.......
+// * * * * * *.......
+// #include<iostream>
+// using namespace  std;
+// int main(){
+//     int row , col;
+//     cout<<"Enter a no of row :";
+//     cin>>row;
+//     cout<<"Enter a no of col :";
+//     cin>>col;
+//     for(int i=1;i<=row;i++){
+//         for(int j=1;j<=col;j++){
+//             cout<<" * ";
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
 
+// Hollow rectangle Pattern
+// * * * * *
+// *       *
+// *       *
+// *       *
+// * * * * *
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int row , col;
+//     cout<<"Enter a no of row :";
+//     cin>>row;
+//     cout<<"Enter a no of col :";
+//     cin>>col;
+//     for(int i=1;i<=row;i++){
+//         for(int j=1;j<=col;j++){
+//             if(i==1 || i==row){
+//                 cout<<" * ";
+//             }else if(j==1 || j==col){
+//                 cout<<" * ";
+//             }else{
+//                 cout<<"   ";
+//             }
+//             }
+//         cout<<endl;
+//     }
+// return 0;
+// }
+
+// inverted half pyramid
+// * * * * *
+// * * * * 
+// * * * 
+// * * 
+// * 
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int row , col;
+//     cout<<"Enter a row  :";
+//     cin>>row;
+//     for(int i=1;i<=row;i++){
+//         for(int j=row;j>=i;j--){
+//             cout<<" * ";
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
+
+// Half Pyramid after 180 degree Rotation
+//         * 
+//       * *
+//     * * *
+//   * * * *
+// * * * * *
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int row ;
+//     cout<<"Enter a no of row : ";
+//     cin>>row;
+//     for(int i=1;i<=row;i++){
+//         for(int j=1;j<=row;j++){
+//             if(j<= row-i){
+//                 cout<<"   ";
+//             }else{
+//                 cout<<" * ";
+//             }
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
+ 
+ // Half pyramid using no
+//  1
+//  1 2 
+//  1 2 3
+//  1 2 3 4 5
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int row;
+//     cout<<"Enter a no of Row : ";
+//     cin>>row;
+//     for(int i=1;i<=row;i++){
+//         for(int j=1;j<=i;j++){
+//             cout<<i<<" ";
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
+
+//  Floyd's Triangle
+// 1
+// 2  3
+// 4  5  6
+// 7  8  9  10
+// 11 12 13 14 15
+#include<iostream>
+using namespace std;
+int main(){
+    int row , n=1;
+    cout<<"Enter a row : ";
+    cin>>row;
+    for(int i=1;i<=row;i++){
+        for(int j=1;j<=i;j++){
+            cout<<n<<"  ";
+            n++;
+        }
+        cout<<endl;
+        }
+        return 0;
+}
+ 
 
 
 
