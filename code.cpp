@@ -691,26 +691,336 @@
 
 
 // Star pattern
+//              * 
+//           *  *  * 
+//        *  *  *  *  * 
+//     *  *  *  *  *  *  * 
+//  *  *  *  *  *  *  *  *  * 
+//  *  *  *  *  *  *  *  *  * 
+//     *  *  *  *  *  *  * 
+//        *  *  *  *  * 
+//           *  *  * 
+//              * 
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter an input :";
+//     cin>>n;
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=n-i;j++){
+//             cout<<"   ";
+//         }
+//         for(int j=1;j<=i;j++){
+//             cout<<" * ";
+//         }
+//         for(int j=2;j<=i;j++){
+//             cout<<" * ";
+//         }
+//         cout<<endl;
+//     }
+//     for(int i=n;i>=1;i--){
+//         for(int j=1;j<=n-i;j++){
+//             cout<<"   ";
+//         }
+//         for(int j=1;j<=2*i-1;j++){
+//             cout<<" * ";
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
+
+
+// Zig-Zag
+//        *           *       
+//     *     *     *     *    
+//  *           *           * 
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter an input :";
+//     cin>>n;
+//     for(int i=1;i<=3;i++){
+//         for(int j=1;j<=n;j++){
+//             if(((i+j)%4==0) || (i==2 && j%4==0)){
+//                 cout<<" * ";
+//             }else{
+//             cout<<"   ";
+//             }
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
+
+// check weather no is prime or not
+// #include<iostream>
+// #include<cmath>
+// using namespace std;
+// int main(){
+//     int n ;
+//     bool flag=0;
+//     cout<<"Enter a no :";
+//     cin>>n;
+//      for(int i=2;i<sqrt(n);i++){
+//             if(n%i==0){
+//                 cout<<"aww aww... no is Non-prime ";
+//                 flag=1;
+//             break;
+//             }
+//     }
+//     if(flag==0){
+//         cout<<"wow! It's prime no";
+//     }
+//     return 0;
+// }
+
+// Reverse a given no
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter a no : ";
+//     cin>>n;
+//     int reverse=0;
+//     while(n>0){
+//         int lastdigit = n%10;
+//         reverse= reverse*10+lastdigit;
+//         n=n/10;
+//         }
+//     cout<<"Reverse of given input is : "<<reverse<<endl; 
+//     return 0;
+// }
+
+
+// ArmStrong no
+// #include<iostream>
+// #include<math.h>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter a no :";
+//     cin>>n;
+//     int sum=0;
+//     int original=n;
+//     while(n>0){
+//         int lastdigit=n%10;
+//         sum+=pow(lastdigit,3);
+//         n=n/10;
+//     }
+//     if(sum==original){
+//         cout<<"Congrats! you find out Armstrong  no";
+//     }else{
+//         cout<<"Aww aww.. try next time . It's not a Armstrong";
+//     }
+//     return 0;
+// }
+
+// Functions
+//prime no between two numbers
+// #include<iostream>
+// #include<math.h>
+// using namespace std;
+// bool isPrime(int num){
+//     for(int i=2;i<=sqrt(num);i++){
+//         if(num%i==0){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// int main(){
+//     int a,b;
+//     cout<<"Enter a first no :";
+//     cin>>a;
+//     cout<<"Enter a second no :";
+//     cin>>b;
+//     for(int i=a;i<=b;i++){
+//         if(isPrime(i)){
+//             cout<< i<<endl;
+//         }
+//     }
+//     return 0;
+// }
+
+
+// Fibannaci series (0,1,1,2,3,5,8,......)
+// #include<iostream>
+// using namespace std;
+// void fib(int n){
+//     int t1=0;
+//     int t2=1;
+//     int nextTerm;
+//     cout<<"Fibenacci series of "<<n<<" term is :- ";
+//     for(int i=1;i<=n;i++){
+//         cout<<t1<<",";
+//         nextTerm=t1+t2;
+//         t1=t2;
+//         t2=nextTerm;
+//     }
+//     return;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter a no to terms : ";
+//     cin>>n;
+//     fib(n);
+//     return 0;
+// }
+
+
+// Factorial of a number
+// #include<iostream>
+// using namespace std;
+// void fact(int n){
+//     int factorial=1;
+//     for(int i=2;i<=n;i++){
+//         factorial*=i;
+//     }
+//     cout<<"Factorial of "<<n<< " is : "<<factorial;
+//     return;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter a no : ";
+//     cin>>n;
+//     fact(n);
+//     return 0;
+// }
+
+
+// calculate nCr
+// #include<iostream>
+// using namespace std;
+// int fact(int n){
+//     int factorial=1;
+//     for(int i=2;i<=n;i++){
+//         factorial*=i;
+//     }
+//     return factorial;
+// }
+// int main(){
+//     int n,r;
+//     cout<<"Attention number of item greater then number of items being chosen at a time .";
+//     cout<<"Enter number of items :";
+//     cin>>n;
+//     cout<<"Enter number of items being chosen at a time.";
+//     cin>>r;
+//     int ans=fact(n)/(fact(n-r)*fact(r));
+//     cout<<"Combination are :"<<ans;
+//     return 0;
+// }
+
+
+// Pascal Triangle
+// 1   
+// 1 1 
+// 1 2 1
+// 1 3 3 1 
+// 1 4 6 4 1
+// #include<iostream>
+// using namespace std;
+// int fact(int n){
+//     int factorial=1;
+//     for(int i=2;i<=n;i++){
+//         factorial*=i;
+//     }
+//     return factorial;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter a input :";
+//     cin>>n;
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<=i;j++){
+//             cout<<fact(i)/(fact(j)*fact(i-j))<<" ";
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
+
+
+// Sum of Natural numbers
+// #include<iostream>
+// using namespace std;
+// int sum(int n){
+//    int ans=((n*(n+1))/2);
+//     return ans;
+// }
+// int main(){
+//     int n ;
+//     cout<<"Enter an input :";
+//     cin>>n;
+//     cout<<"Sum of Given no is : "<<sum(n)<<endl;
+//     return 0;
+// }
+
+
+// Pythagoras
+// #include<iostream>
+// using namespace std;
+// bool check(int x , int y , int z){
+//     int a = max(x,max(y,z));
+//     int b,c;
+//     if(a==x){
+//         b=y;
+//         c=z;
+//     }else if(a==y){
+//         b=x;
+//         c=z;
+//     }else{
+//         b=x;
+//         c=y;
+//     }
+//     if(a*a==b*b + c*c){
+//         return true;
+//     }else{
+//         return false;
+//     }
+// }
+// int main(){
+//     int x,y,z;
+//     cout<<"Enter a first no :";
+//     cin>>x;
+//     cout<<"Enter a Second no :";
+//     cin>>y;
+//     cout<<"Enter a third no :";
+//     cin>>z;
+//     if(check(x,y,z)){
+//         cout<<"wow! It's a Pythagorean Triplet";
+//     }else{
+//         cout<<"Aww aww... Not a Pythagorean Triplet";
+//     }
+//     return 0;
+// }
+
+
+// Binary to Decimal
 #include<iostream>
 using namespace std;
+int binarytoDecimal(int n){
+    int ans=0;
+    int x=1;
+    while(n>0){
+        int y=n%10;
+        ans+=x*y;
+        x*=2;
+        n/=10;
+    }
+    return ans;
+}
 int main(){
     int n;
-    cout<<"Enter an input :";
+    cout<<"Enter a Binary no : ";
     cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=n-i;j++){
-            cout<<"   ";
-        }
-        for(int j=1;j<=i;j++){
-            cout<<" * ";
-        }
-        for(int j=2;j<=i;j++){
-            cout<<" * ";
-        }
-        cout<<endl;
-    }
+    cout<<"Decimal no of given binary no is "<<binarytoDecimal(n)<<endl;
     return 0;
 }
+
+
 
 
 
