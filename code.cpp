@@ -1215,6 +1215,59 @@
 // ********** Sorting of Arrays
 
 // Selection sort
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter an array lenght :";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){    
+//     cin>>a[i];
+//     }
+//     for( int i=0;i<n;i++){
+//         for(int j=i+1;j<n;j++){
+//             if(a[j]<a[i]){
+//                 int temp=a[j];
+//                 a[j]=a[i];
+//                 a[i]=temp;
+//             }
+//         }
+//     }
+//     for(int i=0;i<n;i++){    
+//     cout<<a[i]<<" ";
+//     }
+//     return 0;
+// }
+
+
+// Bubble sort
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"Enter an input length :";
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    int counter=1;
+    while(counter<n){
+        for(int i=0;i<n-counter;i++){
+            if(a[i]>a[i+1]){
+                int temp=a[i];
+                a[i]=a[i+1];
+                a[i+1]=temp;
+            }
+        }
+        counter++;
+    }
+    for(int i=0;i<n;i++){
+        cout<<a[i]<<" ";
+    }
+    return 0;
+}
 
 
 
