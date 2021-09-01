@@ -999,35 +999,224 @@
 
 
 // Binary to Decimal
-#include<iostream>
-using namespace std;
-int binarytoDecimal(int n){
-    int ans=0;
-    int x=1;
-    while(n>0){
-        int y=n%10;
-        ans+=x*y;
-        x*=2;
-        n/=10;
-    }
-    return ans;
-}
-int main(){
-    int n;
-    cout<<"Enter a Binary no : ";
-    cin>>n;
-    cout<<"Decimal no of given binary no is "<<binarytoDecimal(n)<<endl;
-    return 0;
-}
+// #include<iostream>
+// using namespace std;
+// int binarytoDecimal(int n){
+//     int ans=0;
+//     int x=1;
+//     while(n>0){
+//         int y=n%10;
+//         ans+=x*y;
+//         x*=2;
+//         n/=10;
+//     }
+//     return ans;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter a Binary no : ";
+//     cin>>n;
+//     cout<<"Decimal no of given binary no is "<<binarytoDecimal(n)<<endl;
+//     return 0;
+// }
+
+// HexaDecimal to Decimal
+// #include<iostream>
+// using namespace std;
+// int HexaDecimal(string n){
+//     int ans=0;
+//     int x=1;
+//     int s=n.size();
+//     for(int i=s-1;i>=0;i--){
+//         if(n[i]>='0' && n[i]<='9'){
+//             ans+=x*(n[i]-'0');
+//         }
+//         else if(n[i]>='A' && n[i<='B']){
+//             ans+=x*(n[i]-'A'+10);
+//         }
+//         x*=16;
+//     }
+//     return ans;
+// }
+// int main(){
+//     string n;
+//     cout<<"Enter a HexaDecimal no :";
+//     cin>>n;
+//     cout<<"Decimal no of given HexaDecimal is : "<<HexaDecimal(n)<<endl;
+//     return 0;
+// }
 
 
+// Decimal to Binary
+// #include<iostream>
+// using namespace std;
+// string DecimalToBinary(int n){
+//     string ans;
+//     string s;
+//     while(n>=0){
+//         ans=n/2;
+//         s.append(ans);
+//         n/=2;
+//     }
+//     string output;
+//     for(int i=s.size();i>=0;i--){
+//         output.append(s[i]);
+//     }
+//     return output
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter a no : ";
+//     cin>>n;
+//     cout<<"Binary no of given input :"<<DecimalToBinary(n)<<endl;
+//     return 0;
+// }
 
 
+// Decimal to Hexadecimal
 
 
+// Add two Binary no
 
 
- 
+// ******** Array
+// Take a array as input and print it.
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n ;
+//     cout<<"Enter a length of Array.";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//     }
+//     for( int i=0;i<n;i++){
+//         cout<<a[i]<<" ";
+//     }
+// return 0;
+// }
+
+
+// Find max and min no in Array
+// #include<iostream>
+// #include<climits>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter a length of array :";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//     }
+//     int maxNo= INT_MIN;
+//     int minNo= INT_MAX;
+//     for(int i=0;i<n;i++){
+//         if(a[i]>maxNo){
+//             maxNo=a[i];
+//         }
+//         if(a[i]<minNo){
+//             minNo=a[i];
+//         }   
+//     }
+//     cout<<"Maximum no in given no : "<<maxNo<<endl;
+//     cout<<"Minimum no in given no :"<<minNo<<endl;
+//     return 0;
+// }
+
+// aliter
+// #include<iostream>
+// #include<climits>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter a length of array :";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//     }
+//     int maxNo= INT_MIN;
+//     int minNo= INT_MAX;
+//     for(int i=0;i<n;i++){
+//         maxNo = max(maxNo , a[i]);
+//         minNo = min(minNo , a[i]); 
+//     }
+//     cout<<"Maximum no in given no : "<<maxNo<<endl;
+//     cout<<"Minimum no in given no :"<<minNo<<endl;
+//     return 0;
+// }
+
+//************* Searching in Array.
+
+//  Linear Search
+// #include<iostream>
+// using namespace std;
+// int linearSearch(int a[], int n , int key){
+//     for(int i=0;i<n;i++){
+//         if(a[i]==key){
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter an array length :";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//     }
+//     int key;
+//     cout<<"Enter a no you r looking for :";
+//     cin>>key;
+//     cout<<linearSearch(a,n,key)<<endl;
+//     return 0;
+// }
+
+
+// Binary Search { Array must be in sorted order. }
+// #include<iostream>
+// using namespace std;
+// int binarySearch(int a[] , int n , int key){
+//     int s=0;
+//     int e=n;
+//     while(s<=e){
+//         int mid=(s+e)/2;
+//         if(a[mid]==key){
+//             return mid;
+//         }
+//         else if(a[mid>key]){
+//             e=mid-1;
+//         }
+//         else{
+//             s=mid+1;
+//         }
+//     }
+//     return -1;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter a array length :";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//     cin>>a[i];
+//     }
+//     int key;
+//     cout<<"Enter a no you are looking for :";
+//     cin>>key;
+//     cout<<binarySearch(a , n , key)<<endl;
+// return 0;
+// }
+
+// ********** Sorting of Arrays
+
+// Selection sort
+
+
 
 
 
