@@ -1562,6 +1562,213 @@
 // }
 
 
+// Pair Sum Problem
+// check if there exixts two elements is an array such that their sum is equal to given k:
+// #include<iostream>
+// using namespace std;
+// bool pairSum(int a[] , int n, int k){
+//     for(int i=0;i<n-1;i++){
+//         for(int j=i+1;j<n;j++){
+//             if(a[i]+a[j]==k){
+//                 cout<<i<<" "<<j<<endl;
+//                 return true;
+//             }
+//         }
+//     }
+//     return false;    
+// }
+// int main(){
+//     int a[]={2,4,7,11,14,16,20,21};
+//     int k=31;
+//     cout<< pairSum(a ,8 , k)<<endl;
+//     return 0;
+// }
+
+// Aliter
+// check if there exixts two elements is an array such that their sum is equal to given k:
+// #include<iostream>
+// using namespace std;
+// bool pairSum(int a[] , int n, int k){
+//     int low=0;
+//     int high=n-1;
+//     while(low<high){
+//         if(a[low]+a[high]==k){
+//             cout<<low<<" "<<high<<endl;
+//             return true;
+//         }else if(a[low]+a[high]>k){
+//             high--;
+//         }else{
+//             low++;
+//         }
+//     }
+// return false;    
+// }
+// int main(){
+//     int a[]={2,4,7,11,14,16,20,21};
+//     int k=31;
+//     cout<< pairSum(a ,8 , k)<<endl;
+//     return 0;
+// }
+
+//******** 2D Array
+// Declaration
+// int a[n][m]
+// bool a[n][m]
+// float a[n][m]
+// char a[n][m]
+//Taking input of 2D Array
+// for(int i=0;i<n;i++){
+//     for(int j=0;j<m;j++){
+//         cin>>a[i][j];
+//     }
+// }
+//Printing Input
+// for(int i=0;i<n;i++){
+//     for(int j=0;j<m;j++){
+//         cout<<a[i][j]<<"";
+//         }
+// }
+
+// Searching a Matrix
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n,m , x;
+//     cout<<"Enter a row :";
+//     cin>>n;
+//     cout<<"Enter a col :";
+//     cin>>m;
+//     cout<<"Enter element you want to be search :";
+//     cin>>x;
+//     int a[n][m];
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<m;j++){
+//             cin>>a[i][j];
+//         }
+//     }
+//     bool flag=false;
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<m;j++){
+//             if(a[i][j]==x){
+//                 flag=true;
+//             }
+//         }
+//     }
+//     if(flag){
+//         cout<<"Element is found :";
+//     }else{
+//         cout<<"Element is not found:";
+//     }
+// return 0;
+// }
+
+//Spiral Order Mattrix Traversal
+// #include<iostream>
+// using namespace std;
+// signed main(){
+//     int n,m;
+//     cout<<"Enter row length :";
+//     cin>>n;
+//     cout<<"Enter a col length :";
+//     cin>>m;
+//     int a[n][m];
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<m;j++){
+//             cin>>a[i][j];
+//         }
+//     }
+//     int row_start=0 , row_end=n-1 ,col_start=0 ,col_end=m-1;
+//     while(row_start<=row_end && col_start<=col_end){
+//         for(int col=col_start;col<=col_end;col++){
+//             cout<<a[row_start][col]<<" ";
+//         }
+//         row_start++;
+//         for(int row=row_start;row<=row_end;row++){
+//             cout<<a[row][col_end]<<" ";
+//         }
+//         col_end--;
+//         for(int col=col_end;col>=col_start;col--){
+//         cout<<a[row_end][col]<<" ";
+//         }
+//         row_end--;
+//         for(int row=row_end;row>=row_start;row--){
+//         cout<<a[row][col_start]<<" ";
+//         }
+//         col_start++;
+//     }
+// return 0;
+// }
+
+// Matrix-Transpose
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int a[3][3]={{1,2,3},{4,5,6},{7,8,9}};
+//     for(int i=0;i<3;i++){
+//         for(int j=i;j<3;j++){
+//             //swap
+//             int temp=a[i][j];
+//             a[i][j]=a[j][i];
+//             a[j][i]=temp;
+//         }
+//     }
+//     for(int i=0;i<3;i++){
+//         for(int j=0;j<3;j++){
+//             cout<<a[i][j]<<" ";
+//         }
+//         cout<<"\n";
+//     }
+//     return 0;
+// }
+
+
+// Matrix Multiplication
+#include<iostream>
+using namespace std;
+int main(){
+    int n1,n2,n3;
+    cin>>n1>>n2>>n3;
+    int m1[n1][n2];
+    int m2[n2][n3];
+    for(int i=0;i<n1;i++){
+        for(int j=0;j<n2;j++){
+            cin>>m1[i][j];
+        }
+    }
+    for(int i=0;i<n2;i++){
+        for(int j=0;j<n3;j++){
+            cin>>m2[i][j];
+        }
+    }
+    int ans[n1][n3];
+    for(int i=0;i<n1;i++){
+        for(int j=0;j<n3;j++){
+            ans[i][j]=0;
+        }
+    }
+    for(int i=0;i<n1;i++){
+        for(int j=0;j<n3;j++){
+            for(int k=0;k<n2;k++){
+                ans[i][j]+=m1[i][k]*m2[k][j];
+            }
+        }
+    }
+    for(int i=0;i<n1;i++){
+        for(int j=0;j<n3;j++){
+            cout<<ans[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
 
 
 
