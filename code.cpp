@@ -1242,32 +1242,327 @@
 
 
 // Bubble sort
-#include<iostream>
-using namespace std;
-int main(){
-    int n;
-    cout<<"Enter an input length :";
-    cin>>n;
-    int a[n];
-    for(int i=0;i<n;i++){
-        cin>>a[i];
-    }
-    int counter=1;
-    while(counter<n){
-        for(int i=0;i<n-counter;i++){
-            if(a[i]>a[i+1]){
-                int temp=a[i];
-                a[i]=a[i+1];
-                a[i+1]=temp;
-            }
-        }
-        counter++;
-    }
-    for(int i=0;i<n;i++){
-        cout<<a[i]<<" ";
-    }
-    return 0;
-}
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter an input length :";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//     }
+//     int counter=1;
+//     while(counter<n){
+//         for(int i=0;i<n-counter;i++){
+//             if(a[i]>a[i+1]){
+//                 int temp=a[i];
+//                 a[i]=a[i+1];
+//                 a[i+1]=temp;
+//             }
+//         }
+//         counter++;
+//     }
+//     for(int i=0;i<n;i++){
+//         cout<<a[i]<<" ";
+//     }
+//     return 0;
+// }
+
+
+// Insertion Sort
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter an array :";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//     }
+//     for(int i=1;i<n;i++){
+//         int temp=a[i];
+//         int j=i-1;
+//         while(a[j]>temp && j>=0){
+//             a[j+1]=a[j];
+//             j--;
+//         }
+//         a[j+1]=temp;
+//     }
+//     for(int i=0;i<n;i++){
+//         cout<<a[i]<<" ";
+//     }
+//     return 0;   
+// }
+
+
+// Problem :- Given an array a[] of size n for every i from 0 to n-1 . find out output max of (a[0],a[1],a[2],........a[n-1])
+// #include<iostream>
+// using namespace std ;
+// int main(){
+//     int n;
+//     cout<<"Enter an array sixe :";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//     }
+//     int Max=INT_MIN;
+//     for(int i=0;i<n;i++){
+//         Max = max(Max,a[i]);
+//     }
+//     cout<<Max<<" ";
+//     return 0;
+// }
+
+
+// ****** Sub array :-
+// Continous part of the array
+// Number of sub arrays of an array with n elements = nc2 + n = n*(n+1)/2
+
+//***** Sequence :-
+// a sequence is a subsequence that can be derived an array by selecting zero or more elments , without chnaging the order of the remianing element .
+// Number of subsequence of an array with n elemnts = pow(2,n):
+// Quote :-  Every subarray is a sequence but every subsequence is not a subarray
+
+
+// Sum of all Subarrays
+// problem :- Given an array a[] of size n. output sum of each subarray of the given array.
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter an array Size :";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//     }
+//     int sum=0;
+//     for(int i=0;i<n;i++){
+//         sum=0;
+//         for(int j=i;j<n;j++){
+//             sum+=a[j];
+//             cout<<sum<<endl;
+//         }
+//     }
+// return 0;
+// }
+
+
+// Longest AritheMatic SubArray (Google Kickstart )
+// Problem :- An arithmetic array is an array that contains at least two integers and the
+// differences between consecutive integers are equal. For example, [9, 10], [3, 3, 3],
+// and [9, 7, 5, 3] are arithmetic arrays, while [1, 3, 3, 7], [2, 1, 2], and [1, 2, 4] are
+// not arithmetic arrays.
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter an array size :";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++)
+//     cin>>a[i];
+//     int ans=2;
+//     int pd=a[1]-a[0];
+//     int j=2;
+//     int curr=2;
+//     while(j<n){
+//         if(pd==a[j]-a[j-1]){
+//             curr++;
+//         }else{
+//             pd=a[j]-a[j-1];
+//             curr=2;
+//         }
+//         ans=max(ans,curr);
+//         j++;
+//     }
+//     cout<<ans<<endl;
+//     return 0;
+// }
+
+
+// Print SubArray
+// #include<iostream>
+// #include<climits>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter a Array size :";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//     }
+//     for(int i=0;i<n;i++){
+//         for(int j=i;j<n;j++){
+//             for(int k=i;k<=j;k++){
+//                 cout<<a[k]<<" ";
+//             }
+//             cout<<endl;
+//             }
+//     }
+//     return 0;
+// }
+
+
+// Max SubArray
+// #include<iostream>
+// #include<climits>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter a Array size :";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//     }
+//     int Max=INT_MIN;
+//     for(int i=0;i<n;i++){
+//         for(int j=i;j<n;j++){
+//             int sum=0;
+//             for(int k=i;k<=j;k++){
+//                 sum+=a[k];
+//             }
+//             Max=max(Max, sum);
+//             }
+//     }
+//     cout<<Max<<endl;
+//     return 0;
+// }
+
+
+// problem :- Given an array a[] of size N . the task is to find the first repeating element int the array of integers , i.e an element that occurs more than once and whose index of first occcurence is smallest.
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter an array size : ";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//     }
+//     for(int i=0;i<n;i++){
+//         for(int j=i+1;j<n;j++){
+//             if(a[i]==a[j]){
+//                 cout<<j<<endl;
+//                 return 0;
+//             }
+//         }
+//     }
+//     cout<<"No repeation number found :";
+//     return 0;
+// }
+
+// Aliter
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter an array size:";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//     }
+//     const int N = 1e6+2;
+//     int idx[N];
+//     for(int i=0;i<N;i++){
+//         idx[i]= -1;
+//     }
+//     int minidx = INT_MAX;
+//     for(int i=0;i<n;i++){
+//         if(idx[a[i]] != -1){
+//             minidx = min(minidx , idx[a[i]]);
+//         }else{
+//             idx[a[i]] = i;
+//         }
+//     }
+
+//     if(minidx == INT_MAX){
+//         cout<<"-1"<<endl;
+//     }
+//     else{
+//         cout<<minidx+1<<endl;
+//     }
+//     return 0;
+// }
+
+
+//Problem :- Given an unsorted array A of Size N of Non-negative integera , find a continous subarray which adds to a given number S.
+
+
+//Problem :- You are given an array a[] of N integers including 0. the task is to find the smallest positive number missing form the array.
+
+
+//Kadane's Algorithm
+//Max Sub Array
+// #include<iostream>
+// #include<climits>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Array size :";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//     }
+//     int currentSum=0;
+//     int maxSum=INT_MIN;
+//     for(int i=0;i<n;i++){
+//         currentSum+=a[i];
+//         if(currentSum<0){
+//             currentSum=0;
+//         }
+//         maxSum=max(maxSum , currentSum);
+//     }
+//     cout<<maxSum<<endl;
+//     return 0;
+// }
+
+// Maximum Circular SubArray Sum
+// #include<iostream>
+// #include<climits>
+// using namespace std;
+// int kadane(int a[] , int n){
+//     int currentsum=0;
+//     int Max = INT_MIN;
+//     for(int i=0;i<n;i++){
+//         currentsum+=a[i];
+//         if(currentsum<0){
+//             currentsum=0;
+//         }
+//         Max=max(currentsum , Max);
+//     }
+//     return Max;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter an array size :";
+//     cin>>n;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//     }
+//     int wrapsum , nonwrapsum;
+//     nonwrapsum = kadane(a , n);
+//     int totalsum=0;
+//     for(int i=0;i<n;i++){
+//         totalsum+=a[i];
+//         a[i]= -a[i];
+//     }
+//     wrapsum=totalsum+kadane(a , n);
+//     cout<<max(wrapsum , nonwrapsum)<<endl;
+// return 0;
+// }
+
+
+
 
 
 
