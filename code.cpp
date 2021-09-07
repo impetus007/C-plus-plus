@@ -1723,56 +1723,222 @@
 
 
 // Matrix Multiplication
-#include<iostream>
-using namespace std;
-int main(){
-    int n1,n2,n3;
-    cin>>n1>>n2>>n3;
-    int m1[n1][n2];
-    int m2[n2][n3];
-    for(int i=0;i<n1;i++){
-        for(int j=0;j<n2;j++){
-            cin>>m1[i][j];
-        }
-    }
-    for(int i=0;i<n2;i++){
-        for(int j=0;j<n3;j++){
-            cin>>m2[i][j];
-        }
-    }
-    int ans[n1][n3];
-    for(int i=0;i<n1;i++){
-        for(int j=0;j<n3;j++){
-            ans[i][j]=0;
-        }
-    }
-    for(int i=0;i<n1;i++){
-        for(int j=0;j<n3;j++){
-            for(int k=0;k<n2;k++){
-                ans[i][j]+=m1[i][k]*m2[k][j];
-            }
-        }
-    }
-    for(int i=0;i<n1;i++){
-        for(int j=0;j<n3;j++){
-            cout<<ans[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-    return 0;
-}
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n1,n2,n3;
+//     cin>>n1>>n2>>n3;
+//     int m1[n1][n2];
+//     int m2[n2][n3];
+//     for(int i=0;i<n1;i++){
+//         for(int j=0;j<n2;j++){
+//             cin>>m1[i][j];
+//         }
+//     }
+//     for(int i=0;i<n2;i++){
+//         for(int j=0;j<n3;j++){
+//             cin>>m2[i][j];
+//         }
+//     }
+//     int ans[n1][n3];
+//     for(int i=0;i<n1;i++){
+//         for(int j=0;j<n3;j++){
+//             ans[i][j]=0;
+//         }
+//     }
+//     for(int i=0;i<n1;i++){
+//         for(int j=0;j<n3;j++){
+//             for(int k=0;k<n2;k++){
+//                 ans[i][j]+=m1[i][k]*m2[k][j];
+//             }
+//         }
+//     }
+//     for(int i=0;i<n1;i++){
+//         for(int j=0;j<n3;j++){
+//             cout<<ans[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
 
 
+// ******** Character Array
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     char a[100]="apple";
+//     int i=0;
+//     while(a[i]!='\0'){
+//         cout<<a[i]<<endl;
+//         i++;
+//     }
+//     return 0;
+// }
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     char a[100];
+//     cout<<"Enter your name : ";
+//     cin>>a;
+//     cout<<a<<endl;
+//     return 0;
+// }
 
 
+// Check plaindrome
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter a word length :";
+//     cin>>n;
+//     char a[n+1];
+//     cout<<"Enter a word :";
+//     cin>>a;
+//     bool check=1;
+//     for(int i=0;i<n;i++){
+//         if(a[i]!=a[n-1-i]){
+//             check=0;
+//             break;
+//         }
+//     }
+//     if(check){
+//         cout<<"wow! word is palindrome"<<endl;
+//     }else{
+//         cout<<"Aww aww...word is not palindrome"<<endl;
+//     }
+//     return 0;
+// }
+
+// Largest word in sentence
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter sentence length :";
+//     cin>>n;
+//     cin.ignore();
+//     char a[n];
+//     cout<<"Enter sentence :";
+//     cin.getline(a,n);
+//     int i=0;
+//     int currLen=0 , maxLen=0;
+//     int st=0 , maxSt=0;
+//     while(1){
+//         if(a[i]==' ' || a[i]== '\0'){
+//             if(currLen>maxLen){
+//                 maxLen=currLen;
+//                 maxSt=st;
+//             }
+//             currLen=0;
+//             st=i+1;
+//         }else
+//         currLen++;
+//         if(a[i]== '\0')
+//         break;
+//         i++;
+//     }
+//     cout<<maxLen<<endl;
+//     for(int i=0;i<maxLen;i++){
+//         cout<<a[i+maxSt];
+//     }
+//     return 0;
+// }
 
 
+// ******* Pointers ( Pointer are the variables that  store the address of other varibles ):
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int a=10;
+//     int *aptr=&a;
+//     cout<<*aptr<<endl;
+//     *aptr = 20;
+//     cout<<a<<endl;
+//     return 0;
+// }
 
+// Pointer Airthmetic (++ , -- , + , -)
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int a=10;
+//     int *aptr=&a;
+//     cout<<aptr<<endl;
+//     aptr++;
+//     cout<<aptr<<endl;
+//     return 0;
+// }
 
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     char ch='a';
+//     char *cptr=&ch;
+//     cout<<cptr<<endl;
+//     cptr++;
+//     cout<<cptr<<endl;
+//     return 0;
+// }
 
+// Pointers and Arrays
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int a[]={10,20,30};
+//     cout<<*a<<endl;
+//     int *ptr=a;
+//     for(int i=0;i<3;i++){
+//         // cout<<*ptr<<endl;
+//         cout<<*(a+i)<<endl;
+//     }
+//     return 0;
+// }
 
+// Pointer to Pointer
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int a=10;
+//     int *p;
+//     p=&a;
+//     cout<<*p<<endl;
+//     int **q=&p;
+//     cout<<*q<<endl;
+//     cout<<**q<<endl;
+//     return 0;
+// }
 
+// Passing Pointers to function
+// void increment(int a){
+//     a++;
+// }
+// int main(){
+//     int a=2;
+//     increment(a);
+//     cout<<a<<endl; //2
+//     return 0;
+// }
 
+// Swap using Pointer
+// #include<iostream>
+// using namespace std;
+// void swap(int *a , int *b){
+//     int temp=*a;
+//     *a=*b;
+//     *b=temp;
+// }
+// int main(){
+//     int a=2;
+//     int b=4;
+//     int *aptr=&a;
+//     int *bptr=&b;
+//     swap(aptr , bptr);
+//     cout<<a<<" "<<b<<endl;
+//     return 0;
+// }
 
 
 
