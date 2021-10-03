@@ -1941,6 +1941,366 @@
 // }
 
 
+// ******** Strings
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string str;
+//     cout<<"Enter any word :";
+//     cin>>str;
+//     cout<<str<<endl;
+//     return 0;
+// }
+
+// Different types of ways to declare a strings
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string str;
+//     string str1(5,'n');
+//     cout<<str1<<endl;
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string str ="vishal";
+//     cout<<str;
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string str;
+//     getline(cin,str);
+//     cout<<str<<endl;
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string s1 ="fam";
+//     string s2="ily";
+//     s1.append(s2);
+//     cout<<s1<<endl;
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string s1="fam";
+//     string s2="ily";
+//     cout<<s1+s2<<endl;
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string s1="fam";
+//     string s2="ily";
+//     cout<<s1[0]<<endl;
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string abc="hdfgskadgaiyqorejbca";
+//     abc.clear();
+//     cout<<abc;
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string s1="abc";
+//     string s2="xyz";
+//     cout<<s2.compare(s1)<<endl;
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string s1="abcdef";
+//     // s1.clear();
+//     // if(s1.empty()){
+//     //     cout<<"string is empty ";
+//     // }
+//     s1.erase(2,2);
+//     cout<<s1<<endl;
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string s1="abcdef";
+//     cout<<s1.find("cd")<<endl;
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string s1="abcdef";
+//     cout<<s1.insert(4 , "cd")<<endl;
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string s1="abcdef";
+//     cout<<s1.size()<<endl;
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string s1="abcdef";
+//     for(int i=0;i<s1.length();i++){
+//         cout<<s1[i]<<endl;
+//     }
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string s1="abcdef";
+//     cout<<s1.substr(3,1)<<endl;
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string s1="786";
+//     int x=stoi(s1);
+//     cout<<x+2<<endl;
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<string>
+// using namespace std;
+// int main(){
+//     int x=786;
+//     cout<<to_string(x)+"2"<<endl;
+//     return 0;
+// }
+
+// Sorting of String
+// #include<iostream>
+// #include<string>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//     string s1="mnbvcxzlkjhgfdaspoiuytrewq";
+//     sort(s1.begin(),s1.end());
+//     cout<<s1<<endl;
+//     return 0;
+// }
+
+// String Challenge's
+
+// #include<iostream>
+// #include<algorithm>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string str="vishal";
+//     //convert into uppercase
+//     for(int i=0;i<str.length();i++){
+//         if(str[i] >= 'a' && str[i] <= 'z')
+//         str[i]-=32;
+//     }
+//     cout<<str<<endl;   
+// }
+
+// #include<iostream>
+// #include<algorithm>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string str="VISHAL";
+//     //convert into lowercase
+//     for(int i=0;i<str.length();i++){
+//         if(str[i] >= 'A' && str[i] <= 'Z')
+//         str[i]+=32;
+//     }
+//     cout<<str<<endl;   
+// }
+
+// #include<iostream>
+// #include<algorithm>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string s="abcdEFGH";
+//     transform(s.begin(),s.end(),s.begin() , :: toupper);
+//     cout<<s<<endl;
+//     transform(s.begin(),s.end(),s.begin(),::tolower);
+//     cout<<s<<endl;
+//     return 0;
+
+// }
+
+// #include<iostream>
+// #include<algorithm>
+// #include<string>
+// using namespace std;
+// int main(){
+//     string s="346459021";
+//     sort(s.begin(),s.end(),greater<int>());
+//     cout<<s<<endl;
+//     return 0;
+
+// }
+
+//Maximum char occur
+// #include<iostream>
+// #include<string>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//     string s = "abhcderfghdseshjklasd";
+//     int freq[26];
+//     for(int i=0;i<26;i++)
+//         freq[i]=0;
+//     for(int i=0;i<s.size();i++)
+//     freq[s[i]-'a']++;
+//     char ans='a';
+//     int maxF = 0;
+//     for(int i=0;i<26;i++){
+//         if(freq[i]>maxF){
+//             maxF=freq[i];
+//             ans=i+'a';
+//         }
+//     }
+//     cout<<maxF<<"  "<<ans<<endl;
+//     return 0;
+// }
+
+
+// Bit Manipulation
+
+// Get Bit
+// #include<iostream>
+// using namespace std;
+// int getbit(int n, int pos){
+//     return ((n &  (1<<pos))!=0);
+// }
+// int main(){
+//     cout<<getbit(5,2)<<endl;
+//     return 0;
+// }
+
+// Set Bit
+// #include<iostream>
+// using namespace std;
+// int setbit(int n , int pos){
+//     return (n | (1<<pos));
+// }
+// int main(){
+//     cout<<setbit(5,1)<<endl;
+//     return 0;
+// }
+
+// clearbit
+// #include<iostream>
+// using namespace std;
+// int clearbit(int n , int pos){
+//     int mask = ~(1<<pos);
+//     return (n & mask);
+// }
+// int main(){
+//     cout<<clearbit(5,2)<<endl;
+//     return 0;
+// }
+
+//updatebit (clearbit + setbit)
+// #include<iostream>
+// using namespace std;
+// int updatebit(int n ,int pos ,int value){
+//     int mask= ~(1<<pos);
+//     n= n & mask;
+//     return ( n | (value<<pos));
+// }
+// int main(){
+//     cout<<updatebit(5,1,1)<<endl;
+// }
+
+// exapmle-Bit-manipulation
+// write a program to check if a given no is power of 2 ?
+// #include<iostream>
+// using namespace std;
+// bool ispowerof2(int n){
+//     return (n && !(n & n-1));
+// }
+// int main(){
+//     cout <<ispowerof2(16)<<endl;
+//     return 0;
+// }
+
+//write a program to count the number of ones in binary represents of a number
+// #include<iostream>
+// using namespace std;
+//  int numberofones(int n){
+//         int count=0;
+//         while(n){
+//             n=n&(n-1);
+//             count++;
+//         }
+//         return count;
+//     }
+// int main(){
+//     cout<< numberofones(19)<<endl;
+//     return 0;
+// }
+
+//write a program to generate all possible subsets of a set
+#include<iostream>
+using namespace std;
+void subsets(int arr[] , int n){
+    for(int i=0;i< (1<<n);i++){
+        for(int j=0;j<n;j++){
+            if(i & (1<<j)){
+                cout<<arr[j]<<" ";
+            }
+        }cout<<endl;
+    }
+}
+int main(){
+    int arr[4]={1,2};
+    subsets(arr , 2);
+    return 0;
+}
 
 
 
