@@ -2285,21 +2285,71 @@
 // }
 
 //write a program to generate all possible subsets of a set
+// #include<iostream>
+// using namespace std;
+// void subsets(int arr[] , int n){
+//     for(int i=0;i< (1<<n);i++){
+//         for(int j=0;j<n;j++){
+//             if(i & (1<<j)){
+//                 cout<<arr[j]<<" ";
+//             }
+//         }cout<<endl;
+//     }
+// }
+// int main(){
+//     int arr[4]={1,2};
+//     subsets(arr , 2);
+//     return 0;
+// }
+
+//write a program to find a unique number in an array where al numbers except one are present twice;
+// #include<iostream>
+// using namespace std;
+// int unique(int arr[] , int n){
+//     int xorsum=0;
+//     for(int i=0;i<n;i++){
+//         xorsum=xorsum^arr[i];
+//     }
+//     return xorsum;
+// }
+// int main(){
+//     int arr[]={5 , 10};
+//     cout<<unique(arr , 2)<<endl;
+//     return 0;
+// }
+
+//write a program to find a two unique no in an array
 #include<iostream>
 using namespace std;
-void subsets(int arr[] , int n){
-    for(int i=0;i< (1<<n);i++){
-        for(int j=0;j<n;j++){
-            if(i & (1<<j)){
-                cout<<arr[j]<<" ";
-            }
-        }cout<<endl;
-    }
+int setBit(int n, int pos) {
+return ((n & (1 << pos)) != 0);
 }
-int main(){
-    int arr[4]={1,2};
-    subsets(arr , 2);
-    return 0;
+void unique(int arr[], int n) {
+int xorsum = 0;
+for (int i = 0; i < n; i++) {
+xorsum = xorsum ^ arr[i];
+}
+int tempxor = xorsum;
+int setbit = 0;
+int pos = 0;
+while (setbit != 1) {
+setbit = xorsum & 1;
+pos++;
+xorsum = xorsum >> 1;
+}
+int newxor = 0;
+for (int i = 0; i < n; i++) {
+if (setBit(arr[i], pos - 1)) {
+newxor = newxor ^ arr[i];
+}
+}
+cout << newxor << endl;
+cout << (tempxor ^ newxor) << endl;
+}
+int main() {
+int arr[] = {1, 2, 3, 1, 2, 3, 5, 7};
+unique(arr, 8);
+return 0;
 }
 
 
