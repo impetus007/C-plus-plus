@@ -2319,39 +2319,191 @@
 // }
 
 //write a program to find a two unique no in an array
-#include<iostream>
-using namespace std;
-int setBit(int n, int pos) {
-return ((n & (1 << pos)) != 0);
-}
-void unique(int arr[], int n) {
-int xorsum = 0;
-for (int i = 0; i < n; i++) {
-xorsum = xorsum ^ arr[i];
-}
-int tempxor = xorsum;
-int setbit = 0;
-int pos = 0;
-while (setbit != 1) {
-setbit = xorsum & 1;
-pos++;
-xorsum = xorsum >> 1;
-}
-int newxor = 0;
-for (int i = 0; i < n; i++) {
-if (setBit(arr[i], pos - 1)) {
-newxor = newxor ^ arr[i];
-}
-}
-cout << newxor << endl;
-cout << (tempxor ^ newxor) << endl;
-}
-int main() {
-int arr[] = {1, 2, 3, 1, 2, 3, 5, 7};
-unique(arr, 8);
-return 0;
-}
+// #include<iostream>
+// using namespace std;
+// int setBit(int n, int pos) {
+// return ((n & (1 << pos)) != 0);
+// }
+// void unique(int arr[], int n) {
+// int xorsum = 0;
+// for (int i = 0; i < n; i++) {
+// xorsum = xorsum ^ arr[i];
+// }
+// int tempxor = xorsum;
+// int setbit = 0;
+// int pos = 0;
+// while (setbit != 1) {
+// setbit = xorsum & 1;
+// pos++;
+// xorsum = xorsum >> 1;
+// }
+// int newxor = 0;
+// for (int i = 0; i < n; i++) {
+// if (setBit(arr[i], pos - 1)) {
+// newxor = newxor ^ arr[i];
+// }
+// }
+// cout << newxor << endl;
+// cout << (tempxor ^ newxor) << endl;
+// }
+// int main() {
+// int arr[] = {1, 2, 3, 1, 2, 3, 5, 7};
+// unique(arr, 8);
+// return 0;
+// }
 
 
+// #include<iostream>
+// using namespace std;
 
+// bool getbit(int n , int pos){
+//     return ((n & (1<<pos))!=0);
+// }
+// int setbit(int n , int pos){
+//     return (n | (1<<pos));
+// }
 
+// int unique(int arr[] , int n){
+//     int  result=0;
+//     for(int i=0;i<64;i++){
+       
+//        int sum=0;
+//         for(int j=0;j<n;j++){
+//             if(getbit(arr[j] , i)){
+//                 sum++;
+//             }
+//         }
+//         if(sum%3!=0){
+//             result = setbit(result ,i);
+//         }
+//     }
+//     return result;
+// }
+// int main(){
+//     int arr[]={1,2,3,4,1,2,3,1,2,3};
+//     cout<<unique(arr,10)<<endl;
+// }
+
+// Sieve of  Erathosthenes
+
+// #include<iostream>
+// using namespace std;
+// void primeSieve(int n){
+//     int Prime[100]= {0};
+//     for(int i=2;i<=n;i++){
+//         if(Prime[i]==0){
+//             for(int j=i*i ; j<=n ; j+=i){
+//                 Prime[j]=1;
+//             }
+//         }
+//     }
+//     for(int i=2;i<=n;i++){
+//         if(Prime[i]==0){
+//             cout<<i<<" ";
+//         }
+//     }
+//     cout<<endl;
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     primeSieve(n);
+//     return 0;
+// }
+
+//Prime Factorization using sieve
+// #include<iostream>
+// using namespace std;
+// void primefactor(int n){
+//     int spf[100]={0};
+//     for(int i=2;i<=n;i++){
+//         spf[i]=i;
+//     }
+//     for(int i=2;i<=n;i++){
+//         if (spf[i]==i){
+//             for (int j=i*i;j<=n;j+=i){
+//                 if(spf[j]==j){
+//                     spf[j]=i;
+//                 }
+//             }
+//         }
+//     }
+//     while(n!=1){
+//         cout<<spf[n]<<" ";
+//         n=n/spf[n];
+//     }
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     primefactor(n);
+//     return 0;
+// }
+
+//Recursion
+//when a function call itself to mare its problem short
+// #include<iostream>
+// using namespace std;
+// int sum(int n){
+//     if(n==0){
+//         return 0;
+//     }
+//     int prevsum=sum(n-1);
+//     return (n+ prevsum);
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     cout<<sum(n)<<endl;
+//     return 0;
+// }
+
+//Calculate n raised to power p
+// #include<iostream>
+// using namespace std;
+// int power(int n, int p){
+//     if(p==0){
+//         return 1;
+//     }
+//     int prevpower=power(n,p-1);
+//     return n*prevpower;
+// }
+// int main(){
+//     int n,p;
+//     cin>>n>>p;
+//     cout<<power(n,p)<<endl;
+//     return 0;
+// }
+
+//Find the factorial of a number
+// #include<iostream>
+// using namespace std;
+// int fac(int n){
+//     if(n==0){
+//         return 1;
+//     }
+//     int prevfact = fac(n-1);
+//     return n*prevfact;
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     cout<<fac(n)<<endl;
+//     return 0;
+// }
+
+//print the nth fibonacci number
+// #include<iostream>
+// using namespace std;
+// int fib(int n){
+//     if(n==0 || n==1){
+//         return n;
+//     }
+//     return fib(n-1)+fib(n-2);
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     cout<<fib(n)<<endl;
+//     return 0;
+// }
