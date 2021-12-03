@@ -5,14 +5,14 @@ using namespace std;
 signed main()
 {
     int n;
+    bool flag=0;
     cin>>n;
     while(n--){
         if(n%10==4 || n%10==7){
             n=n/10;
+            
         }
-        else{
-            break;
-        }
+       
     }
     
     return 0;
