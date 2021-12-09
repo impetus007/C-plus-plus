@@ -4,11 +4,8 @@
 using namespace std;
 signed main()
 {
-    int t;
-    cin>>t;
-    while(t--)
-    {
-
-    }
+    int k, l, m, n, d;
+    cin>>k>>l>>m>>n>>d;
+    
     return 0;
 }
