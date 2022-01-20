@@ -4,6 +4,7 @@
     "ostream": "cpp",
     "iostream": "cpp",
     "new": "cpp",
-    "__node_handle": "cpp"
+    "__node_handle": "cpp",
+    "algorithm": "cpp"
   }
 }

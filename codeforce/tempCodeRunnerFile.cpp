@@ -1,20 +1,9 @@
-#include<iostream>
-#include<math.h>
-
-#define int long long
-#define ull unsigned long long
-using namespace std;
-signed main()
-{
-    int t;
-    cin>>t;
-    while(t--)
-    {
-        int x ;
-        cin>>x;
-        int output1= (int)sqrt(x) + (int)cbrt(x);
-        int output2= (int)(sqrt(cbrt(x)));
-        cout<<output1-output2<<"\n";
+set<string> s1;
+    for(int i=0;i<s.size();i++){
+        if(s[i]=='{' || s[i]==',' ||s[i]=='}'){
+            continue;
+        }else{
+            s1.insert(s[i]);
+        }
     }
-    return 0;
-}
+    cout<<s1.size()<<"\n";

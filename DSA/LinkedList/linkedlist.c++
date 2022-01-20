@@ -243,36 +243,20 @@
 // }
 
 // Delete Last Node of Doubly Linked List
-node *delhead(node *head){
-    if(head == NULL ) return NULL;
-    if(head -> next == NULL){
-        delete head ;
-        return NULL;
-    }
-    else{
-        node *temp =head;
-        head = head -> next;
-        head -> prev =NULL;
-        delete temp;
-        return head;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// node *delhead(node *head){
+//     if(head == NULL ) return NULL;
+//     if(head -> next == NULL){
+//         delete head ;
+//         return NULL;
+//     }
+//     else{
+//         node *temp =head;
+//         head = head -> next;
+//         head -> prev =NULL;
+//         delete temp;
+//         return head;
+//     }
+// }
 
 
 //circular Linked list
@@ -298,9 +282,56 @@ node *delhead(node *head){
 //Advantage:- we can traverse the whole list from any node
 //implementation of algoriths like round robin
 //we can insert at the begining and end by just maintaing one tail reference /pointer
-
 //disadvantage :- implementation of operations become complex
 
+// Cirucular Linked list traversal
+//method 1
+// void printList(node *head){
+//     if(head == NULL) return;
+//     cout<<(head -> data)<<" ";
+//     for(node *p = head -> next; p!=head; p=p-> next)
+//     cout<<(p-> data);
+// }
+//Method 2( Do While)
+// void printList(node *head){
+//     if(head == NULL)
+//     return;
+//     node *p =head;
+//     do{
+//         cout<<(p->data)<<" ";
+//         p=p->next;
+//     }while(p!=head);
+// }
 
 
+//Insert at Begin of Circular Linked List
+//Naive Solution
+// node *insertBegin(node *head , int x){
+//     node *temp = new node(x);
+//     if(head == NULL)
+//     temp -> next = temp;
+//     else{
+//         node *curr = head;
+//         while(curr -> next !=head)
+//         curr = curr -> next;
+//         curr->next=temp;
+//         temp->next= head;
+//     }
+//     return temp;
+// }
+//Efficient Method
+// node *insertBegin(node *head , int x){
+//     node *temp = new node(x);
+//     if(head == NULL){
+//         temp->next = temp;
+//         return temp;
+//     }else{
+//         temp->next = head ->next;
+//         head->next = temp;
+//         int t =head ->data;
+//         head -> data = temp -> data;
+//         temp -> data = t;
+//         return head;
+//     }
+// }
 
