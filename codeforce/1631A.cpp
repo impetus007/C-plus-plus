@@ -20,7 +20,7 @@ signed main()
         for(int i=0;i<n;i++){
             int b;
             cin>>b;
-            v1.push_back(b);
+            v2.push_back(b);
         }
         int temp;
         for(int i=0;i<v1.size();i++){
@@ -30,8 +30,18 @@ signed main()
                 v2[i]=temp;
             }
         }
-       int max1= max_element(v1.begin(),v1.end());
-       int max2 = max_element(v2.begin(),v2.end());
+       int max1=INT_MIN;
+       for(int i=0;i<v1.size();i++){
+           if(v1[i]>max1){
+               max1=v1[i];
+           }
+       }
+       int max2=INT_MIN;
+       for(int i=0;i<v2.size();i++){
+           if(v2[i]>max2){
+               max2=v2[i];
+           }
+       }
        cout<<max1*max2<<"\n";
     }
     return 0;

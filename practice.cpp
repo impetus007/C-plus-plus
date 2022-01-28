@@ -74,20 +74,27 @@
 // C++ program to find second largest
 // element in an array
 
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// /* Function to print the second largest elements */
+// void print2largest(int arr[], int arr_size)
+// {
+// 	cout<<arr_size<<endl;
+
+// /* Driver program to test above function */
+// int main()
+// {
+// 	int arr[] = { 12, 35, 1, 10, 34, 1 };
+// 	int n = sizeof(arr) / sizeof(arr[0]);
+// 	print2largest(arr, n);
+// 	return 0;
+// }
+
+#include<iostream>
 using namespace std;
-
-/* Function to print the second largest elements */
-void print2largest(int arr[], int arr_size)
-{
-	cout<<arr_size<<endl;
-
-/* Driver program to test above function */
-int main()
-{
-	int arr[] = { 12, 35, 1, 10, 34, 1 };
-	int n = sizeof(arr) / sizeof(arr[0]);
-	print2largest(arr, n);
+int main(){
+	cout<<char(97)<<endl;
 	return 0;
 }
 
