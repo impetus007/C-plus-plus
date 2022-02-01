@@ -10,12 +10,18 @@ signed main()
     {
         int n;
         cin>>n;
+        int count1= floor(log10(n)+1);
         if(n%7==0){
             cout<<n<<"\n";
         }else{
-            int sum;
-            sum=n%7;
-            cout<<n-sum<<"\n";
+            int ans=-1;
+            for(int j=0;j<10;j++){
+                if((n - n % 10 + j) % 7 == 0){
+                ans = n - n % 10 + j;
+            }
+            }
+            cout<<ans<<endl;
+           
         }
 
     }

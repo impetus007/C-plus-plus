@@ -8,7 +8,7 @@ signed main()
     cin>>t;
     while(t--)
     {
-        string s, original;
+        string s;
         cin>>s;
         int zeros=0 , ones=0;
         for(int i=0 ;i<s.size();i++){
@@ -19,9 +19,10 @@ signed main()
             }
         }
         if(zeros==ones){
-            cout<<"0"<<"\n";
+            cout<<zeros-1<<"\n";
         }else if(zeros>ones){
             cout<<ones<<"\n";
+        
         }else{
             cout<<zeros<<"\n";
         }
