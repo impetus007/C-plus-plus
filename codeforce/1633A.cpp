@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+#define int long long
+#define ull unsigned long long
+using namespace std;
+signed main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        if(n%7==0){
+            cout<<n<<"\n";
+        }else{
+            int sum;
+            sum=n%7;
+            cout<<n-sum<<"\n";
+        }
+
+    }
+    return 0;
+}
