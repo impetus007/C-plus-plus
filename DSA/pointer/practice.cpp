@@ -10,9 +10,6 @@ void P(int *y)
 {
   int x = *y + 2;
   Q(x);
-  
-  cout<<x << " ";
-}
 
 int main()
 {
@@ -20,4 +17,8 @@ int main()
   P(&x);
   cout<<x;
   return 0;
+}
+
+  
+  cout<<x << " ";
 }

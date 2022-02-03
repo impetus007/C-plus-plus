@@ -20,6 +20,7 @@ signed main()
             char alpa;
             int count=0;
             int half;
+            vector<char> v;
         half=n/2;
             for(int i=0;i<n;i++){
                 if(s[i]==s[n-i]){
@@ -28,7 +29,14 @@ signed main()
                        if(s[j]==alpa){
                            count++;
                        }
-                   }if(count>)
+                   }if(count>half){
+                       cout<<"NO"<<endl;
+                   }else{
+                       for(int i=0;i<n;i++){
+                           if()
+                       }
+
+                   }
                 }
             }
            

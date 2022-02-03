@@ -4,8 +4,15 @@
 using namespace std;
 signed main()
 {
-   char s;
-   cin>>s;
-   cout<<s[0];
+   string a, b, c ,ans;
+   cin>>a>>b>>c;
+   ans=a+b;
+   sort(ans.begin(), ans.end());
+   sort(c.begin(), c.end());
+   if(ans == c){
+       cout<<"YES"<<"\n";
+   }else{
+       cout<<"NO"<<"\n";
+   }
     return 0;
 }
