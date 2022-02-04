@@ -4,16 +4,14 @@
 using namespace std;
 
 bool  checkNumber(int input[], int n, int x){
-    if(n==1){
-        return input[0];
+   if(n==0){
+        return false;
     }
-    checkNumber(input+1,n-1,x);
-    bool flag=false;
-    if(input[0]==x){
-        flag=true;
-        return flag;
-    }
-    return flag;
+   if(input[0]==x){
+       return true;
+   }else{
+       checkNumber(input+1,n-1,x);
+   }
 }
 
 int main(){
