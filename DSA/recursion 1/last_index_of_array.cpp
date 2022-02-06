@@ -2,13 +2,22 @@
 using namespcace std;
 
 int lastIndex(int input[], int n, int x){
-    if(n<0){
+//     if(n==0){
+//         return -1;
+//     }
+//     int ans = lastIndex(input+1, n-1, x);
+//    return ans;
+if(n==0){
+    return -1;
+    int ans= lastIndex(input+1, n-1, x);
+    if(input[0]==x){
+        return n+1;
+    }else{
         return -1;
     }
-    if(input[n]==x){
-        return n;
-    }
-    return lastIndex(input, n-1,x);
+}
+
+
 }
 int main(){
     int n;
