@@ -516,45 +516,94 @@
 //         cout << endl;
 //     }
 // }
-
 // Print Subset of an Array
+// #include <bits/stdc++.h>
+// using namespace std;
+// void printSubsetsOfArray(int input[], int size, int output[], int outputSize)
+// {
+//     if (size == 0)
+//     {
+//         for (int i = 0; i < outputSize; i++)
+//         {
+//             cout << output[i] << " ";
+//         }
+//         cout << endl;
+//         return;
+//     }
+//     printSubsetsOfArray(input + 1, size - 1, output, outputSize);
+//     // assuming current elemnet is included in array
+//     int newoutput[20] = {};
+//     for (int i = 0; i < outputSize; i++)
+//     {
+//         newoutput[i] = output[i];
+//     }
+//     newoutput[outputSize] = input[0];
+//     printSubsetsOfArray(input + 1, size - 1, newoutput, outputSize + 1);
+// }
+// void printSubsetsOfArray(int input[], int size)
+// {
+//     int ans[20] = {};
+//     printSubsetsOfArray(input, size, ans, 0);
+// }
+// int main()
+// {
+//     int input[1000], length;
+//     cin >> length;
+//     for (int i = 0; i < length; i++)
+//     {
+//         cin >> input[i];
+//     }
+//     printSubsetsOfArray(input, length);
+// }
+
+// Return All codes
 #include <bits/stdc++.h>
 using namespace std;
-void printSubsetsOfArray(int input[], int size, int output[], int outputSize)
+int getcodes(string input, string output[])
 {
-    if (size == 0)
+    if (input[0] == '\0')
     {
-        for (int i = 0; i < outputSize; i++)
+        output[0] = "";
+        return 1;
+    }
+    int first = input[0] - '0';
+    char firstChar = first + 'a' - 1;
+    char secondChar = '\0';
+    string smallOutput1[500];
+    string smallOutput2[500];
+    int size1 = getcodes(input.substr(1), smallOutput1);
+    int size2 = 0;
+    if (input[1] != '\0')
+    {
+        int second = first * 10 + input[1] - 48;
+        if (second >= 10 && second <= 26)
         {
-            cout << output[i] << " ";
+            secondChar = second + 'a' - 1;
+            size2 = getcodes(input.substr(2), smallOutput2);
         }
-        cout << endl;
-        return;
     }
-
-    printSubsetsOfArray(input + 1, size - 1, output, outputSize);
-    // assuming current elemnet is included in array
-    int newoutput[20] = {};
-    for (int i = 0; i < outputSize; i++)
+    int k = 0;
+    for (int i = 0; i < size1; i++)
     {
-        newoutput[i] = output[i];
+        output[k] = firstChar + smallOutput1[i];
+        k++;
     }
-    newoutput[outputSize] = input[0];
-    printSubsetsOfArray(input + 1, size - 1, newoutput, outputSize + 1);
-}
-
-void printSubsetsOfArray(int input[], int size)
-{
-    int ans[20] = {};
-    printSubsetsOfArray(input, size, ans, 0);
+    for (int i = 0; i < size2; i++)
+    {
+        output[k] = secondChar + smallOutput2[i];
+        k++;
+    }
+    return k;
 }
 int main()
 {
-    int input[1000], length;
-    cin >> length;
-    for (int i = 0; i < length; i++)
+    string input;
+    cin >> input;
+    string output[1000];
+    int count = getcodes(input, output);
+    for (int i = 0; i < count && i < 10000; i++)
     {
-        cin >> input[i];
+        cout << output[i] << "\n";
     }
-    printSubsetsOfArray(input, length);
+    return 0;
 }
