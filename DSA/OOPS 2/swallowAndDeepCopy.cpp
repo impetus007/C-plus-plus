@@ -10,7 +10,7 @@ public:
     {
         this->age = age;
 
-        // swallow copy
+        // swallow copy :- store address
         //  this ->name = name;
 
         // Deep Copy
