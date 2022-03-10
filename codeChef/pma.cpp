@@ -1,4 +1,14 @@
-int n;
+#include <bits/stdc++.h>
+#define int long long
+#define ull unsigned long long
+using namespace std;
+signed main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        // int n;
         // cin >> n;
         // vector<int> v;
         // for (int i = 0; i < n; i++)
@@ -51,3 +61,51 @@ int n;
         //     }
         // }
         // cout << ans << "\n";
+
+        // logic:-2
+        int n;
+        cin >> n;
+        int arr[n];
+        for (int i = 0; i < n; i++)
+        {
+            cin >> arr[i];
+        }
+        int maxi = 1;
+        int max = abs(arr[1]);
+        for (int i = 1; i < n; i += 2)
+        {
+            if (abs(arr[i]) > max)
+            {
+                max = abs(arr[i]);
+                maxi = i;
+            }
+        }
+        int mini = 0;
+        int min = abs(arr[0]);
+        for (int i = 0; i < n; i += 2)
+        {
+            if (abs(arr[i]) < min)
+            {
+                min = abs(arr[i]);
+                mini = i;
+            }
+        }
+        if (max > min)
+        {
+            int temp = arr[mini];
+            arr[mini] = arr[maxi];
+            arr[maxi] = temp;
+        }
+        int sume = 0, sumo = 0;
+        for (int i = 0; i < n; i += 2)
+        {
+            sumo += abs(arr[i]);
+        }
+        for (int i = 1; i < n; i += 2)
+        {
+            sume += abs(arr[i]);
+        }
+        cout << sumo - sume << "\n";
+    }
+    return 0;
+}
