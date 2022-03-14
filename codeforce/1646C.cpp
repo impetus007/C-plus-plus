@@ -8,56 +8,34 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        bool ans1 = false;
-        int a1, a2;
-        if (n >= 0)
-        {
-
-            long long sr = sqrt(n);
-            if (sr * sr == n)
-            {
-                ans1 = true;
-                a1 = sr;
+        int n,x;
+        cin >> n>>x;
+        int a[n];
+        for(int i=0;i<n;i++)cin>>a[i];
+        int l,r,f=0;
+        for(int i=0;i<n;i++){
+            int len=0;
+            r=l=i;
+            if(a[i]%x==0){
+                while(l>=0){
+                    if(a[l]<=a[i])len++;
+                    else break;
+                    l--;
+                }
+                while(r<n){
+                    if(a[r]<=a[i])len++;
+                    else break;
+                    r++;
+                }
+                if(len>=a[i]/x){
+                    f=1;
+                    break;
+                }
             }
         }
-        bool ans2 = false;
-        int i = 1;
-        for (;; i++)
-        {
-            if (n % i == 0)
-            {
-                n /= i;
-            }
-            else
-            {
-                break;
-            }
-        }
-
-        if (n == 1)
-        {
-            ans2 = true;
-            a2 = i;
-        }
-        else
-        {
-            ans2 = false;
-        }
-        if (ans1)
-        {
-            cout << a1 << "\n";
-        }
-        else if (ans2)
-        {
-            cout << a2 << "\n";
-        }
-        else
-        {
-            cout << "-1"
-                 << "\n";
-        }
+        if(f)cout<<"YES";
+        else cout<<"NO";
+        cout<<"\n";
     }
     return 0;
 }
