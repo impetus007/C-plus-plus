@@ -11,8 +11,9 @@ public:
         this->real = real;
         this->img = img;
     }
-    void print(){
-        cout<<real<<" +i"<<img<<"\n";
+    void print()
+    {
+        cout << real << " +i" << img << "\n";
     }
     void add(complex c2)
     {
@@ -29,18 +30,22 @@ int main()
 {
     int real1, real2, img1, img2;
     cin >> real1 >> real2 >> img1 >> img2;
-
     complex c1(real1, img1);
     complex c2(real2, img2);
     int choice;
-    cin>>choice;
-    if(choice==1){
+    cin >> choice;
+    if (choice == 1)
+    {
         c1.add(c2);
         c1.print;
-    }else if(choice==2){
+    }
+    else if (choice == 2)
+    {
         c1.multiply(c2);
         c1.print();
-    }else{
+    }
+    else
+    {
         return 0;
     }
 }
