@@ -64,7 +64,6 @@ int main()
         if (min == arr[i])
         {
             flag = true;
-            break;
         }
         if (min > arr[i])
         {
