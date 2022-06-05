@@ -8,18 +8,22 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int a;
-        cin >> a;
-        if (a == 1)
+        int n;
+        cin >> n;
+        vector<int> v;
+        for (int i = 0; i < n; i++)
         {
-            cout << "1"
-                 << "\n";
+            int x;
+            cin >> x;
+            v.push_back(x);
         }
-        else if (a == 2)
+        if (v.size() == 1)
         {
-            int d, e;
-            cin >> d >> e;
-            if (d == e)
+            cout << "1\n";
+        }
+        if (v.size() == 2)
+        {
+            if (v[0] == v[1])
             {
                 cout << "1\n";
             }
@@ -28,26 +32,17 @@ signed main()
                 cout << "2\n";
             }
         }
-        else
+        if (v.size() > 2)
         {
             int count = 0;
-            vector<int> v;
-            for (int i = 0; i < a; i++)
-            {
-                int x;
-                cin >> x;
-                v.push_back(x);
-            }
-
             for (int i = 1; i < v.size(); i++)
             {
                 if (v[i - 1] == v[i])
                 {
-
                     count++;
                 }
             }
-            cout << (v.size() - count) << "\n";
+            cout << v.size() - count << "\n";
         }
     }
     return 0;
