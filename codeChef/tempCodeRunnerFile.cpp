@@ -8,46 +8,29 @@ signed main()
     cin >> t;
     while (t--)
     {
-        int a;
-        cin >> a;
-        if (a == 1)
+        int n;
+        cin >> n;
+        string s;
+        cin >> s;
+        int count = 0;
+        for (int i = 0; i < s.size() - 1; i++)
         {
-            cout << "1"
-                 << "\n";
-        }
-        else if (a == 2)
-        {
-            int d, e;
-            cin >> d >> e;
-            if (d == e)
+            if (s[i] == s[i + 1])
             {
-                cout << "1\n";
+                continue;
             }
             else
             {
-                cout << "2\n";
+                count++;
             }
+        }
+        if (s[s.size() - 1] == 0)
+        {
+            cout << count + 1 << "\n";
         }
         else
         {
-            int count = 0;
-            vector<int> v;
-            for (int i = 0; i < a; i++)
-            {
-                int x;
-                cin >> x;
-                v.push_back(x);
-            }
-
-            for (int i = 1; i < v.size(); i++)
-            {
-                if (v[i - 1] == v[i])
-                {
-
-                    count++;
-                }
-            }
-            cout << (v.size() - count) << "\n";
+            cout << count << "\n"
         }
     }
     return 0;
