@@ -1,5 +1,11 @@
 {
   "files.associations": {
-    "unordered_map": "cpp"
-  }
+    "unordered_map": "cpp",
+    "string": "cpp",
+    "filesystem": "cpp",
+    "iosfwd": "cpp",
+    "iostream": "cpp",
+    "set": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
 }

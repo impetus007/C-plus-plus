@@ -18,7 +18,7 @@ signed main()
 
             if (i >= j)
             {
-                cout << j++ << " "
+                cout << j++ << " ";
             }
         }
         cout << "\n";

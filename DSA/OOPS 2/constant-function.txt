@@ -1,4 +1,0 @@
-student const s1;
-
-inside class student
-int getnumber const()
